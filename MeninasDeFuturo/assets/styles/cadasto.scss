@@ -1,0 +1,70 @@
+@import 'root';
+
+/* Estilos gerais */
+$primary-font: Arial, sans-serif;
+$primary-color: $rosa;
+$border-color: $c-claro;
+$border-radius: 5px;
+
+body {
+    font-family: $primary-font;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+}
+
+/* Etapas */
+fieldset:not(:first-child) {
+    display: none;
+}
+
+/* Estilo para a mensagem de sucesso */
+#cadastroForm fieldset:last-child {
+    text-align: center;
+}
+
+/* Estilo para a navegação entre as etapas */
+.buttonNavigation {
+    margin-top: 10px;
+    text-align: center;
+}

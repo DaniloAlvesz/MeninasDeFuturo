@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meninas de Futuro - Cadastro</title>
+    <link rel="stylesheet" href="../assets/styles/header.css">
+    <link rel="stylesheet" href="../assets/styles/button.css">
+    <link rel="stylesheet" href="../assets/styles/indexStyle.css">
+    <link rel="stylesheet" href="../assets/styles/cadasto.css">
+    <link rel="shortcut icon" href="/assets/images/logo-meninasdefuturo.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo-meninasdefuturo.svg" alt="Logo Meninas de Futuro">
+        <nav>
+            <ul>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Ranking</a></li>
+            </ul>
+        </nav>
+        <div class="buttonNavigation">
+            <a href="#" class="button">Sou Aluna</a>
+            <a href="#" class="button">Aprenda a Programar</a>
+        </div>
+    </header>
+
+    <main class="cadastro">
+        <h2>Cadastro</h2>
+        <form id="cadastroForm" onsubmit="return false;">
+            <fieldset>
+                <legend>Dados de Acesso</legend>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div>
+                    <label for="senha">Criar Senha:</label>
+                    <input type="password" id="senha" required>
+                </div>
+                <div>
+                    <label for="confirmarSenha">Confirmar Senha:</label>
+                    <input type="password" id="confirmarSenha" required>
+                </div>
+                <button onclick="prosseguirEtapa(2)">Próxima Etapa</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <div>
+                    <label for="nomeCompleto">Nome Completo:</label>
+                    <input type="text" id="nomeCompleto" required>
+                </div>
+                <div>
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" required>
+                </div>
+                <button onclick="prosseguirEtapa(3)">Próxima Etapa</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Etapa 3 - Finalização</legend>
+                <p>Parabéns, seu cadastro foi realizado com sucesso. Aguarde um email informando os próximos passos.</p>
+                <button onclick="window.location.href='../index.html'">Voltar para o Início</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <script>
+        let etapaAtual = 1;
+
+        function prosseguirEtapa(proximaEtapa) {
+            const form = document.getElementById('cadastroForm');
+
+            if (etapaAtual < proximaEtapa) {
+                etapaAtual = proximaEtapa;
+                form.reset();
+            }
+
+            const fieldsets = form.getElementsByTagName('fieldset');
+            for (let i = 0; i < fieldsets.length; i++) {
+                fieldsets[i].style.display = i + 1 === etapaAtual ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

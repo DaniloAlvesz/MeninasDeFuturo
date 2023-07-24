@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button {
+  background: #ff6b6b;
+  padding: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #f1f0e7;
+}/*# sourceMappingURL=button.css.map */

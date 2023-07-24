@@ -1,0 +1,63 @@
+@import 'root';
+
+.banner {
+    display: flex;
+    width: 100vw;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+
+    .bannerImg {
+        width: 100vw; // Certifica-se de que a imagem ocupe toda a largura do banner
+    }
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+    gap: 2rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 5%; // Reduzindo o espaçamento lateral para torná-lo mais responsivo
+    color: $white;
+    margin-top: -8rem;
+    position: absolute;
+
+    .button {
+        max-width: fit-content;
+        cursor: pointer;
+    }
+}
+
+// Responsividade para dispositivos com largura de até 768 pixels (tablets e smartphones)
+@media screen and (max-width: 1268px) {
+    .banner {
+        flex-direction: column;
+    }
+    .bannerContent {
+        font-size: .8rem;
+        margin-top: -.8rem;
+        position: relative;
+        color: $azul;
+        gap: 1rem
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+    }
+
+    .bannerImg   {
+    }
+
+    .bannerContent {
+        max-width: 100%; // Ocupar toda a largura da tela em dispositivos menores
+        padding: 0 2rem; // Reduzindo o espaçamento lateral para torná-lo mais responsivo em dispositivos menores
+        margin-top: -4rem; // Ajustando o espaçamento superior para dispositivos menores
+        color: $c-escuro;
+    }
+}
